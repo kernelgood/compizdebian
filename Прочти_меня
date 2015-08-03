@@ -1,0 +1,13 @@
+Если в меню не отображаются значки, то следует отредактировать файл
+/usr/lib/python2.7/dist-packages/ccm/Utils.py
+
+
+Найдем строку:
+
+        ret = super (PrettyButton, self).do_expose_event (self, event)
+
+и заменим на:
+
+        ret = gtk.Button.do_expose_event (self, event)
+
+При следующем запуске значки будут отображаться правильно.
